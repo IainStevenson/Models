@@ -11,14 +11,14 @@ set COVER_CONSOLE="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professio
 :: Using pacakges
 set COVER_NUGET_CACHE=%USERPROFILE%\.nuget\packages
 
-:: Coverage 
+:: Coverage - note nuget package version
 SET COVER_EXECUTE="%COVER_NUGET_CACHE%\opencover\4.7.1221\tools\OpenCover.Console.exe"
-:: Of
+:: Of - note net5.0
 SET COVER_ARGUMENTS="%COVER_FOLDER%\%COVER_PROJECT%\bin\Debug\net5.0\%COVER_PROJECT%.dll"
 :: Into
 SET COVER_OUTPUT="%COVER_FOLDER%\CoverageResults.xml"
 
-:: Report
+:: Report - note nuget package version and net5.0
 SET COVER_REPORT="%COVER_NUGET_CACHE%\ReportGenerator\4.8.13\tools\net5.0\ReportGenerator.exe"
 :: Into
 SET COVER_REPORT_FOLDER="%COVER_FOLDER%\CoverageReport"
