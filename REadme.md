@@ -9,7 +9,7 @@ A simple POCO class with unit tests to research how to use OpenCover and ReportG
 
 ## Coverage.Bat
 
-* Sets up the necessary variable4s to execute the tests in teh console runner, and output the dcoverage XML data.
-* Then passes the XML data to the report generator to write the report.
+* Sets up the necessary variables to execute the tests in the console runner, and output the coverage XML data.
+* Then passes the coverage XML data to the report generator to write the report.
 * Then views the report in a browser.
 
