@@ -7,8 +7,8 @@ namespace Models.Tests
     public class PersonTests
     {
         private Person _unit = null;
-        private System.DateTimeOffset _now = System.DateTimeOffset.UtcNow;
-        private System.TimeSpan aYearAgo = new System.TimeSpan(365, 0, 0, 0, 0);
+        private readonly System.DateTimeOffset _now = System.DateTimeOffset.UtcNow;
+        private readonly System.TimeSpan _thirtyYears = new System.TimeSpan(10950, 0, 0, 0, 0);
 
         [TestInitialize]
         public void Setup()
@@ -19,7 +19,7 @@ namespace Models.Tests
                 Given = "Test",
                 Initials = "A",
                 Family = "Subject",
-                Born = _now.Subtract(aYearAgo)
+                Born = _now.Subtract(_thirtyYears)
             };
         }
 
@@ -39,25 +39,25 @@ namespace Models.Tests
 
 
         [TestMethod]
-        public void TestAgeAsOfNow()
+        public void PersonAgeAsOfAYearAgoIsCorrect()
         {
-
             // Act
-            _unit.Born = _now.Subtract(aYearAgo);
+            var ageAsOfAYearAgo = _unit.Age(System.DateTimeOffset.UtcNow.Subtract(new System.TimeSpan(365,0,0,0,0)));
 
             // Assert
-            Assert.AreEqual(aYearAgo.Days, _unit.Age(_now).Days);
+            Assert.AreEqual(_thirtyYears.Days - 365, ageAsOfAYearAgo.Days );
+
         }
 
         [TestMethod]
-        public void TestAgeWithoutReferenceDate()
+        public void PersonAgeAsOfNowIsCorrect()
         {
 
             // Act
             var age = _unit.Age();
 
             // Assert
-            Assert.AreEqual(aYearAgo.Days, age.Days);
+            Assert.AreEqual(_thirtyYears.Days, age.Days);
         }
 
     }

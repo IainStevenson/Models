@@ -8,16 +8,14 @@ set COVER_PROJECT=Models.Tests
 SET COVER_FILTER="+[Models]*"
 :: Via
 set COVER_CONSOLE="VSTest.Console.exe"
-:: Using pacakges
+:: Using packages
 set COVER_NUGET_CACHE=%USERPROFILE%\.nuget\packages
-
 :: Coverage - note nuget package version
 SET COVER_EXECUTE="%COVER_NUGET_CACHE%\opencover\4.7.1221\tools\OpenCover.Console.exe"
 :: Of - note net5.0
 SET COVER_ARGUMENTS="%COVER_FOLDER%\%COVER_PROJECT%\bin\Debug\net5.0\%COVER_PROJECT%.dll"
 :: Into
 SET COVER_OUTPUT="%COVER_FOLDER%\CoverageResults.xml"
-
 :: Report - note nuget package version and net5.0
 SET COVER_REPORT="%COVER_NUGET_CACHE%\ReportGenerator\4.8.13\tools\net5.0\ReportGenerator.exe"
 :: Into
@@ -31,6 +29,5 @@ SET COVER_REPORT_FILE=%COVER_REPORT_FOLDER%\Index.html
 %COVER_REPORT%  -reports:%COVER_OUTPUT% -targetdir:%COVER_REPORT_FOLDER%
 :: View
 %COVER_REPORT_FILE%
-ENDLOCAL
 
-::C:\Users\Iain.Stevenson\.nuget\packages\reportgenerator\4.8.13\tools\net5.0
+ENDLOCAL

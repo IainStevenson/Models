@@ -4,6 +4,8 @@ namespace Models
 {
     public class Person
     {
+        public long Id { get; set; }
+        public Guid Identifier { get; set; } = Guid.NewGuid();
         public string Given { get; set; }
         public string Initials { get; set; }
         public string Family { get; set; }
@@ -11,9 +13,9 @@ namespace Models
 
         public TimeSpan Age(DateTimeOffset? asOf = null)
         {
-            if (asOf is null) _ = DateTimeOffset.UtcNow;
+            if (asOf is null) asOf = DateTimeOffset.UtcNow;
 
-            return new TimeSpan(DateTimeOffset.UtcNow.Ticks - Born.Ticks);
+            return new TimeSpan(asOf.Value.Ticks - Born.Ticks);
 
         }
     }
