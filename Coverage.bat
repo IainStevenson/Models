@@ -7,7 +7,7 @@ set COVER_PROJECT=Models.Tests
 :: Specify just the 'Models' namespace and all its classes
 SET COVER_FILTER="+[Models]*"
 :: Via
-set COVER_CONSOLE="C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow\VSTest.Console.exe"
+set COVER_CONSOLE="VSTest.Console.exe"
 :: Using pacakges
 set COVER_NUGET_CACHE=%USERPROFILE%\.nuget\packages
 
