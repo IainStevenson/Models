@@ -9,7 +9,7 @@ A simple POCO class with unit tests to research how to use OpenCover and ReportG
 
 ## Coverage.Bat
 
-To run this easily, slick on the solution in Solution explorer, then either 
+To run this easily, click on the solution in Solution explorer, then either 
 * right click and select Open in Terminal 
 * or press Ctrl+'
 
